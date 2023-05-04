@@ -1,0 +1,29 @@
+/* General styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Styles */
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.items-container{
+    height: 50%;
+    width: 60%;
+    margin: 0 auto;
+}
+.item{
+    display: none;
+}
+.item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.active{
+    display: block;
+}
