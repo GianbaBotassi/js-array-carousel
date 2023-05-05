@@ -31,7 +31,24 @@
 button{
     position: absolute;
     padding: 1rem;
-    right: 3%;
-    top:50%;
-    transform: translate(0,-50%);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+}
+#top_button{
+    right: 50%;
+    top:2%;
+    transform: translate(50%,0);
+}
+#bottom_button{
+    right: 50%;
+    bottom:2%;
+    transform: translate(50%,0);
+}
+button:hover{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.hidden{
+    display: none;
 }
