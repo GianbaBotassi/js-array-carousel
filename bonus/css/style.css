@@ -1,0 +1,54 @@
+/* General styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Styles */
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.slider{
+    position: relative;
+    height: 50%;
+    width: 60%;
+    margin: 0 auto;
+}
+.item{
+    display: none;
+}
+#items-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.active{
+    display: block;
+}
+button{
+    position: absolute;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+}
+#top_button{
+    right: 50%;
+    top:2%;
+    transform: translate(50%,0);
+}
+#bottom_button{
+    right: 50%;
+    bottom:2%;
+    transform: translate(50%,0);
+}
+button:hover{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.hidden{
+    display: none;
+}
