@@ -1,17 +1,14 @@
 // Creo array con immagini richieste
 const imgList = ["img/01.webp","img/02.webp","img/03.webp","img/04.webp","img/05.webp"]
 
-// Dichiaro costante div immagine
-let newImgDiv;
-
 // Creo costante per collegare items container
 const container = document.getElementById("items-container");
 
 // Creo ciclo per caricare tutte le immagini dell'array
 for(let i = 0; i < 5; i++){
 
-    // Dichiaro e assegno costante con nuovo elemento div e aggiungo classe item
-    newImgDiv = document.createElement("div");
+    // Dichiaro e assegno costante con nuovo elemento div e aggiungo classe item (display none)
+    const newImgDiv = document.createElement("div");
     newImgDiv.classList.add("item");
 
     // Inserisco nel container il div e gli immetto il template literal con l'array ciclato
@@ -22,7 +19,7 @@ for(let i = 0; i < 5; i++){
 // Creo array con tutti i div creati
 const divList = document.getElementsByClassName("item");
 
-// Creo posizione nell'array
+// Creo posizione nell'array div creati
 let divListPos = 0;
 
 // Appongo classe active a primo div
