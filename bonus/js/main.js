@@ -31,7 +31,7 @@ const thumbnailList = document.getElementsByClassName("thumb");
 // Creo posizione nell'array div creati
 let arrayPos = 0;
 
-// Appongo classe active a primo div
+// Appongo classe active e brightness a primo div
 divList[arrayPos].classList.add("active");
 thumbnailList[arrayPos].classList.add("brightness");
 
@@ -66,7 +66,6 @@ botButton.addEventListener("click",
             if(arrayPos === 1){
                 topButton.classList.remove("hidden");
             }
-            console.log(arrayPos);
         }
     }
 )
@@ -94,10 +93,8 @@ topButton.addEventListener("click",
             divList[arrayPos].classList.add("active");
             thumbnailList[arrayPos].classList.add("brightness");
 
-
             // Se mi trovo all'inizio dell'array rimuovo top botton
             if(arrayPos === 0){
-
                 topButton.classList.add("hidden");
             }
             // Se mi trovo alla posizione 3 compare bottone bot
