@@ -2,28 +2,38 @@
 const imgList = ["img/01.webp","img/02.webp","img/03.webp","img/04.webp","img/05.webp"]
 
 // Creo costante per collegare items container
-const container = document.getElementById("items-container");
+const container = document.getElementById("items_container");
 
-// Creo ciclo per caricare tutte le immagini dell'array
+// Creo costante per collegare items thumbnail container
+const thumbnailContainer = document.getElementById("thumbnail_container");
+
+// Creo ciclo per caricare tutte le immagini dell'array e thumbnail
 for(let i = 0; i < 5; i++){
 
-    // Dichiaro e assegno costante con nuovo elemento div e aggiungo classe item (display none)
-    const newImgDiv = document.createElement("div");
-    newImgDiv.classList.add("item");
+    // Innesto nel container una stringa backtick che si ripeta per le immagini
+    container.innerHTML += `<div class="item">
+                                <img src="${imgList[i]}">
+                            </div>`;
 
-    // Inserisco nel container il div e gli immetto il template literal con l'array ciclato
-    container.append(newImgDiv);
-    newImgDiv.innerHTML = `<img src="${imgList[i]}">`;
+     // Innesto nel container una stringa backtick che si ripeta per le THUMBNAIL
+    thumbnailContainer.innerHTML += `<div class="thumb">
+                                    <img src="${imgList[i]}">
+                                    </div>`;
+
 }
 
 // Creo array con tutti i div creati
 const divList = document.getElementsByClassName("item");
 
+// Creo array con tutti i div thumbnail
+const thumbnailList = document.getElementsByClassName("thumb");
+
 // Creo posizione nell'array div creati
-let divListPos = 0;
+let arrayPos = 0;
 
 // Appongo classe active a primo div
-divList[divListPos].classList.add("active");
+divList[arrayPos].classList.add("active");
+thumbnailList[arrayPos].classList.add("brightness");
 
 // Dichiaro e assegno costante al bottone in basso nel DOM
 const botButton = document.getElementById("bottom_button");
@@ -33,28 +43,30 @@ botButton.addEventListener("click",
     function(){
 
         // Se la posizione dell'array imgList è inferiore alla sua lunghezza(5)
-        if(divListPos < imgList.length){
+        if(arrayPos < imgList.length){
 
-            // Rimuovo la classe active alla prima posizione dell'array
-            divList[divListPos].classList.remove("active");
+            // Rimuovo la classe active e brightness alla prima posizione dell'array
+            divList[arrayPos].classList.remove("active");
+            thumbnailList[arrayPos].classList.remove("brightness");
 
             // Sposto di 1 la posizione array
-            divListPos = divListPos +1;
+            arrayPos = arrayPos +1;
 
-            // Aggiungo la classe active al successivo elemento
-            divList[divListPos].classList.add("active");
+            // Aggiungo la classe active e brightness al successivo elemento
+            divList[arrayPos].classList.add("active");
+            thumbnailList[arrayPos].classList.add("brightness");
+
 
             // Se mi trovo alla fine dell'array rimuovo il bottom button
-            if(divListPos === (imgList.length -1)){
-
+            if(arrayPos === (imgList.length -1)){
                 botButton.classList.add("hidden");
             }
 
             // Se mi trovo alla posizione 1 compare bottone top
-            if(divListPos === 1){
+            if(arrayPos === 1){
                 topButton.classList.remove("hidden");
             }
-            console.log(divListPos);
+            console.log(arrayPos);
         }
     }
 )
@@ -69,24 +81,27 @@ topButton.classList.add("hidden");
 topButton.addEventListener("click",
     function(){
         // Se la posizione dell'array imgList è inferiore alla sua lunghezza
-        if(divListPos < imgList.length){
+        if(arrayPos < imgList.length){
 
-            // Rimuovo la classe active alla prima posizione dell'array
-            divList[divListPos].classList.remove("active");
+            // Rimuovo la classe active e brightness alla prima posizione dell'array
+            divList[arrayPos].classList.remove("active");
+            thumbnailList[arrayPos].classList.remove("brightness");
 
             // Sposto di 1 la posizione array
-            divListPos = divListPos -1;
+            arrayPos = arrayPos -1;
 
-            // Aggiungo la classe active al successivo elemento
-            divList[divListPos].classList.add("active");
+            // Aggiungo la classe active e brightness al successivo elemento
+            divList[arrayPos].classList.add("active");
+            thumbnailList[arrayPos].classList.add("brightness");
+
 
             // Se mi trovo all'inizio dell'array rimuovo top botton
-            if(divListPos === 0){
+            if(arrayPos === 0){
 
                 topButton.classList.add("hidden");
             }
             // Se mi trovo alla posizione 3 compare bottone bot
-            if(divListPos === (imgList.length - 2)){
+            if(arrayPos === (imgList.length - 2)){
                 botButton.classList.remove("hidden");
             }
             

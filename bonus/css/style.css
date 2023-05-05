@@ -5,29 +5,36 @@
     box-sizing: border-box;
 }
 
-/* Main Styles */
+/* main container */
 .container{
     height: 100vh;
     display: flex;
     align-items: center;
 }
+
+/* Slider container */
 .slider{
     position: relative;
     height: 50%;
     width: 60%;
     margin: 0 auto;
+    display: flex;
 }
+/* Set item div on display none */
 .item{
     display: none;
 }
-#items-container img{
+#items_container img{
     height: 100%;
-    width: 100%;
+    width: 700px;
     object-fit: cover;
 }
+/* Class active to show divs */
 .active{
     display: block;
 }
+
+/* Buttons to slide photo */
 button{
     position: absolute;
     padding: 1rem;
@@ -49,6 +56,29 @@ button{
 button:hover{
     background-color: rgba(255, 255, 255, 0.7);
 }
+/* Class to hidden buttons */
 .hidden{
     display: none;
+}
+
+/* Thumnail styles */
+#thumbnail_container{
+    background-color: red;
+    width: 400px;
+}
+#thumbnail_container div{
+    height: 20%;
+}
+#thumbnail_container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Class with brightness */
+.thumb{
+    filter: brightness(0.3);
+}
+.brightness{
+    filter: brightness(1);
 }
